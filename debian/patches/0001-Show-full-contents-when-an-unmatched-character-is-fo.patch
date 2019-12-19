@@ -20,6 +20,3 @@ index 8ed4f50..29e89a7 100644
          utf8.erase(chars.begin()->offset, chars.begin()->length);
          for (auto&& c : chars) {
            c.offset -= chars.begin()->length;
--- 
-2.20.1
-
