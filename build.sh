@@ -2,9 +2,10 @@
 
 BRANCH="${VERSION:-3.4.1}"
 TARGET="$PWD"
+DEBIAN_FRONTEND=noninteractive
 DEB_BUILD_OPTIONS=parallel=$(nproc)
 
-export DEB_BUILD_OPTIONS
+export DEBIAN_FRONTEND DEB_BUILD_OPTIONS
 
 set -xeu
 
