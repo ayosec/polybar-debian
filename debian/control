@@ -20,6 +20,7 @@ Build-Depends:
  libxcb-image0-dev,
  libxcb-randr0-dev,
  libxcb-util0-dev,
+ python-sphinx,
  python-xcbgen,
  xcb-proto
 Standards-Version: 4.3.0

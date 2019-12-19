@@ -8,6 +8,7 @@ include /usr/share/dpkg/architecture.mk
 
 override_dh_auto_configure:
 	dh_auto_configure --		   \
+	  -DBUILD_DOC:BOOL="ON"            \
 	  -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	  -DCMAKE_CXX_COMPILER=g++         \
 	  -DENABLE_ALSA:BOOL="ON"          \
