@@ -5,10 +5,12 @@ include /usr/share/dpkg/architecture.mk
 
 %:
 	dh $@ --buildsystem=cmake --builddirectory=build
+	make -C build test
 
 override_dh_auto_configure:
 	dh_auto_configure --		   \
 	  -DBUILD_DOC:BOOL="ON"            \
+	  -DBUILD_TESTS:BOOL="ON"          \
 	  -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	  -DCMAKE_CXX_COMPILER=g++         \
 	  -DENABLE_ALSA:BOOL="ON"          \
