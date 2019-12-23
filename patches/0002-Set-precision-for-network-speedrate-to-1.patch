@@ -1,0 +1,35 @@
+From b0f9774b953a3507699ed7deca7e19334c4a9e5c Mon Sep 17 00:00:00 2001
+From: Ayose <ayosec@gmail.com>
+Date: Mon, 23 Dec 2019 15:16:51 +0000
+Subject: [PATCH] Set precision for network speedrate to 1
+
+---
+ src/adapters/net.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/adapters/net.cpp b/src/adapters/net.cpp
+index 0b79e12..78a4c25 100644
+--- a/src/adapters/net.cpp
++++ b/src/adapters/net.cpp
+@@ -229,15 +229,17 @@ namespace net {
+     float time_diff = std::chrono::duration_cast<std::chrono::seconds>(duration).count();
+     float speedrate = bytes_diff / (time_diff ? time_diff : 1);
+ 
++    int precision = 0;
+     vector<string> suffixes{"GB", "MB"};
+     string suffix{"KB"};
+ 
+     while ((speedrate /= 1000) > 999) {
+       suffix = suffixes.back();
+       suffixes.pop_back();
++      precision = 1;
+     }
+ 
+-    return sstream() << std::setw(minwidth) << std::setfill(' ') << std::setprecision(0) << std::fixed << speedrate
++    return sstream() << std::setw(minwidth) << std::setfill(' ') << std::setprecision(precision) << std::fixed << speedrate
+                      << " " << suffix << "/s";
+   }
+ 
+-- 
+2.20.1
+
