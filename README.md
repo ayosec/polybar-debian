@@ -27,15 +27,6 @@ $ sudo dpkg -i target/polybar_3.4.1-1_amd64.deb
 
 $ sudo apt-get -f install   # Only is any package is missing
 ```
-## Patches
-
-The repository contains a patch to change the warning message printed when a character can't be printed. With this patch, the full text is printed in the message (instead of just the character). I needed this to debug some issues with my configuration. If you don't want the patch, just remove the `debian/patches/` directory.
-
-```bash
-$ rm -fr debian/patches
-$ ./build-in-container.sh
-```
-
 ## New release
 
 To publish a new release:
