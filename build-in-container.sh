@@ -3,7 +3,7 @@
 set -eu
 
 TARGET="$(dirname "$0" | xargs realpath)"
-VERSION="3.4.1"
+VERSION="3.4.2"
 IMAGE="debian:buster"
 
 while getopts "v:i:h" opt

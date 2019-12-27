@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BRANCH="${VERSION:-3.4.1}"
+BRANCH="${VERSION:-3.4.2}"
 TARGET="$PWD"
 DEBIAN_FRONTEND=noninteractive
 DEB_BUILD_OPTIONS=parallel=$(nproc)
