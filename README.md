@@ -1,3 +1,7 @@
+**UPDATE** Since 2020-04-13, Polybar is [available in Debian Unstable](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=856179#106).
+
+---
+
 # Debian Package for Polybar
 
 This repository contains the source to build a Debian package for [Polybar](https://polybar.github.io/).
